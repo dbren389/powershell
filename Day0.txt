@@ -1,0 +1,109 @@
+day 0
+
+powershell script extension: .ps1
+
+programming: creating a specific set of instructions for a computer that accomplishes a task 
+
+regex: creating and matching patterns found in text
+
+	a range matches a single character from the enclosed brackets []
+	ex: [abc] would match on a, b, or c
+	[^abc] matches any character that is not a, b, or c
+	[a-z] matches any lowercase character
+	[A-Z] matches any uppercase character
+	[A-Za-z] matches on any uppercase or lowercase letter 
+	[0-9] matches on any digit 0-9, can also be represented as \d
+
+	A group matches every character from the enclosed characters. A group uses parentheses ()
+	(abc) would match on abc
+	(abc|cba) would match on abc or cba 
+
+	A quantifier determines how many times the preceding character, group, or range occurs, using braces {}
+	(a){4} would match 'aaaa'
+	(abc){1,2} would match abc or abcabc
+	[A-Z]{1,} would match any uppercase letter at least one time 
+	[A-Z]{0, 5} would match any upercase letter at most five time
+	* stands for 0 or more times
+	+ stands for 1 or more times {1.}
+	? stands for 0 or 1 times {0,1}
+
+	. is a wildcard that can stand for any other character 
+
+	anchors specify where a string must start and end 
+	^ = start of a string
+	$ = end of a string 
+	^[ab]$ will match on ab but not on abdominal
+	spaces do not seperate strings, newlines do, so a b would not match the above pattern 
+
+	escape character: \
+	using this will treat the symbol direcrtly after it as a literal character within the pattern 
+	\? translates to a literal ?, not a special qunaitifer 
+	\. translates to a literal period 
+
+	phone number:
+	- = a literal hyphen (no special meaning)
+	for phone numbers stored in format: (###) ###-####
+		\([0-9]{3}\) [0-9]{3}-[0-9]{4}
+		\(\d{3}\) \d{3}-\d{4}
+
+	to test regex in powershell:
+	"a" -cmatch "[ab]"
+	"(706)" -cmatch "\(\d\d\d\)"
+
+
+	Regex PEs:
+
+Q:	Count the total # of IPs in the 150.0.0.0/8 network anywhere in the file
+A:	(150)\.\d{1,3}\.\d{1,3}\.\d{1,3}
+
+Q: 	Which of the following patterns would match on the string "AbCdEfGh"
+A:	([A-Z][a-z]){4}
+
+Q:	Regex to count the total # of times the ": S" tag appears 
+A:	(\: S)
+
+Q:	Regex to count the total # of times two digits appears at the end of the line, using any combination of "1, 2, or 3"
+A:	[123]{2}$
+
+Q:	Regex to count the total # of times '84' appears in the middle of a Social Security Number
+A:	[\d]{3}-(84)-[\d]{4}
+
+Q:	Pseudocode is formatted differently depending on the programming language you use.
+A:	False
+
+Q:	REGEX is all about creating and matching ____ found in text
+A:	Patterns
+
+
+
+PowerExchange: PowerShell backdoor used by OilRig
+
+DynoWiper: Russian malware that is a native Windows binary used in the 2025 Poland Wiper Attacks
+
+LazyWiper: Native PowerShell script that was likely created by a large language model
+
+Empire: Open-source tool with Windows post-exploitation components written in PowerShell
+
+Q: 	Based on information from the MITRE ATT&CK software page, what is the name of the software that can takes a PowerShell script and embeds it into the pixels of a PNG image?
+A:	Invoke-PSImage
+
+Q: 	The software in the previous question is used primarily by the Sandworm Team. What country is the Sandworm Team associated with?
+A:	Russia
+
+Q:	In the Anthropic report on disrupting the first reported AI-orchestrated cyber espionage campaign, the threat actor used AI to perform ____ % of the campaign
+A:	80-90
+
+Q: 	What organization is responsible for creating materials to help advance national security with products such as the ATT&CK framework?
+A:	Mitre
+
+
+
+
+
+
+
+
+
+
+
+

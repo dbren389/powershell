@@ -1,0 +1,113 @@
+Powershell differs from traditional shells in a few ways:
+	Powershell treats every entity as an object, or an enriched data container 
+	Properties consist of what objects are 
+	methods consist of what objects can do
+
+Key Cmdlets
+
+	Write-Output
+		displays text to the console 
+	Set-ExecutiopnPolicy Unrestricted
+		gives execute permissions 
+	Get-Location
+		prints working directory 
+	Set-Location
+		change working direcotry
+	Get-ChildItem
+		ls 
+	Get-Content
+		cat
+	Get-Service
+		lists services 
+	Get-Process
+		lists running processes 
+	Where-Object
+		object property filtering 
+	Get-Help
+		get help for a command
+	Get-Command
+		retrieve commands 
+	Get-Member
+		get informatoin about objects, including properties and methods 
+	Clear-Host
+	Get-Alias
+		retrieve aliases
+	Set-Alias
+		create or reassign aliases 
+	New-Alias
+		create an alias 
+	Get-Variable
+	Read-Host
+	Set-ExecutionPolicy
+	Get-Content
+
+Named Parameter
+	A paramater that requires you to type the specific parameter and followed by an argument that satisfies it
+	ex: Get-ChildItem -Include *.txt
+
+Positional Parameter
+	A parameter that is determined off of order of arguments 
+	Ex: Set-Location C:\Windows\Sytem32
+	The path is applied to the first positional parameter for Set-Location, which is Path
+
+Switch Parameter
+	You have to specify the name of the parameter, but no arguments follow it
+	Like a boolean light switch 
+	Ex: Get-ChildItem -File
+
+Variables
+	Unit of memory in which values are stores 
+	Three types of variables:
+		User-Created Variables: created and maintained by the user, only exist for that given powershell session 
+		Automatic Variables: Created and maintained by powershell 
+			$_: Stores the current object in the pipeline
+			$HOME: Stores the user's home directory
+			$PROFILE: Stores the path of the Powershell profile
+			$PSVERSIONTABLE: stores informatoin about the current powershell version 
+			$PWD: Stores the full path of the current working directory
+		Preference Variables: created by powershell and maintained by the user
+			these represent user preference settings 
+			$ErrorView: determines the display format of error messages in posh, can be changed to CategoryView
+		
+	Variables can be stored in the following data types:
+		Integer
+		String
+		Boolean
+		Float
+
+Profiles
+	A powershell profile is a script that runs when every powershell session starts 
+	You can add commands, aliases, functions, variables, and modules
+	Variables can be added to profile file to become persistent across sessions 
+	You can add other session-specific elements to your profile, so they are avialable in every session without having to import or re-create them
+	
+Red Herring: 
+	something that distracts or misleads from something important 
+	
+PEs:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
