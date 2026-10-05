@@ -93,16 +93,77 @@ while ($true){
 }
 Write-Output "The final list: $mylist"
 
+# functions are self-contained blocks of code that perform a specific task 
+
+# function declaration
+function Write-Greeting {
+    Write-Output "Hello!"
+}
 
 
+#function call
+Write-Greeting
 
 
+# parameters are used to specify function inputs
+function Write-GreetingP {
+    param(
+        $value
+    )
+    Write-Output "Hello $value!"
+}
+
+#named function call
+Write-GreetingP -value "Army Soldier"
+
+#positional function call
+Write-GreetingP "Army Soldier"
 
 
+# multiple parameters
 
+function Add-Numbers{
+    param(
+        $num1,
+        $num2
+        )
+    $sum = $num1 + $num2
+    Write-Output "The sum is $sum"
+}
 
+#paramater type can be specified 
+function Add-Strings{
+    param(
+        [string]$string1,
+        [string]$string2
+        )
+    $newstring = $string1 + " " + $string2
+    Write-Output "The combined string is $newstring"
+}
 
+#mandatory parameters can be specified 
+function Get-Remainder{
+    param(
+        [Parameter(Mandatory)]
+        $num1,
+        [Parameter(Mandatory)]
+        $num2
+        )
+        $remainder = $num1 % $num2
+        Write-Output "The remainder is $remainder"
 
+}
+
+#default parameter values can be specified 
+
+function add-numbers {
+    param(
+        $num1 = 6,
+        $num2 = 7
+        )
+        $sum = $num1 + $num2
+        Write-Output "The sum is $sum"
+}
 
 
 
