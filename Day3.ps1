@@ -1,7 +1,7 @@
 ﻿# arrays
 
 # an array is a data structure that is designed to store a collection of items
-#arrays have a fixed length (immutable)
+#arrays have a fixed length (immutable), index values start at 0
 #items in an array can have the same type of different types
 #standard format for arrays
 

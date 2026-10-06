@@ -190,9 +190,44 @@ $x++
 
 #Create a function named Check-Even that takes a mandatory integer parameter named 'number' and prints whether or not 'number' is even.
 
+function Check-Even{
+    param(
+    [Parameter(Mandatory)]
+    [int]$number)
+
+    if ($number % 2 -eq 0){
+        Write-Output "$number is even"
+    }
+    else {
+        Write-Output "$number is odd"
+    }
+}
+
 #Create a function named Cube-Number that takes an integer parameter named 'my_number' and prints the cube of the number. The default value of 'my_number' should be 5.
+function Cube-Number{
+    param(
+    [int]$my_number = 5)
+
+    $cube = $my_number * $my_number *$my_number
+    Write-Output "The cube of $my_number is $cube"
+
+}
+
 
 #Create a function named Check-Regex that takes a string parameter named 'text' and a string parameter named 'pattern'. It should print whether or not there is a regex match. 
+
+function Check-Regex{
+    param(
+    [string]$text,
+    [string]$pattern)
+
+    if ($text -cmatch $pattern){
+        Write-Output "The strings are a match!"
+    }
+    else {
+        Write-Output "No match was found."
+    }
+}
 
 
 #Lesson 4
