@@ -218,10 +218,34 @@ foreach($number in $numbers){
 }
 
 
+#caeser cipher
 
+function caesar{
+param ([int]$shift,
+       [string]$text)
+       $text = $text.ToLower()
+       $letter = ""
+       $inputarray = $text.toCharArray()
+       $length = $text.Length
+       $result = @()
+       $letters = @("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z")
+       for ($i = 0; $i -lt $length; $i++){
+        #extract the letter
+            $letter = $inputarray[$i]
+        #get the index of the letter
+            [int]$index = $letters.IndexOf($letter)
+        #get the index of the shifted letter 
+            [int]$shiftedletter = ($index + $shift) % 26
+        #get the new letter
+            $result += $letters[$shiftedletter]
+       }
 
+       # turn result array back into string
+            $resultstring = -join $result
 
+            Write-Output "The result of the caesar cipher is $resultstring"
 
+}
 
 
 
