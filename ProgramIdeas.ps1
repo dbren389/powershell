@@ -201,8 +201,21 @@ elseif ($userchoice -eq "Paper" -and $comppick -eq "Rock"){
 }
 }
 
-
-
+# Create a program that determines the max and min values of an array of integers
+function minmax{
+param ([Array] $numbers)
+$max = 0
+$min = 10000
+foreach($number in $numbers){
+    if($number -gt $max){
+        $max = $number
+    }
+    if($number -lt $min){
+        $min = $number
+    }
+}
+ Write-Output "The max or the array is $max and the min of the array is $min"
+}
 
 
 
