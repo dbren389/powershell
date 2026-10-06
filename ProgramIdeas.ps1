@@ -232,11 +232,11 @@ param ([int]$shift,
        for ($i = 0; $i -lt $length; $i++){
         #extract the letter
             $letter = $inputarray[$i]
-        #get the index of the letter
+        #get the index of the letter from alphabet array
             [int]$index = $letters.IndexOf($letter)
-        #get the index of the shifted letter 
+        #get the index of the new letter after the shift
             [int]$shiftedletter = ($index + $shift) % 26
-        #get the new letter
+        #add the new letter to result array 
             $result += $letters[$shiftedletter]
        }
 

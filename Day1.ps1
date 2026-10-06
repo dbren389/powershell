@@ -169,3 +169,6 @@ $_ #stores the current object in the pipeline
 $PROFILE # stores the path of the powershell profile
 $PSVERSIONTABLE # stores information about the current powershell verison 
 $PWD # stores the full path of the current working directory 
+
+# PowerShell ISE 7 will be cross platform, feature cloud functionality, and is currently in development.
+# A. False
