@@ -1,4 +1,13 @@
-﻿# arrays
+﻿
+#indexing a string
+
+$string = "examples"
+$string[0] = e
+$string[-1] = s
+
+
+
+# arrays
 
 # an array is a data structure that is designed to store a collection of items
 #arrays have a fixed length (immutable), index values start at 0
