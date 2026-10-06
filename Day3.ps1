@@ -25,6 +25,10 @@ $animals[0]
 #assign new values to an array
 $animals[0] = "monkey"
 
+$animals[1..3]
+
+$animals[3..1]
+
 #display the length of the array
 $animals.Length
 
@@ -164,30 +168,6 @@ function add-numbers {
         $sum = $num1 + $num2
         Write-Output "The sum is $sum"
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

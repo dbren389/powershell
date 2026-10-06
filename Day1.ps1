@@ -58,7 +58,7 @@ Get-Command
 # filter for all Get commands:
 Get-Command Get*
 
-# diaplsys importnat information about Powershell objects like properties and methods
+# displays important information about Powershell objects like properties and methods
 <cmdlet> | Get-Member
 
 #powershell uses built-in aliases like:
@@ -151,3 +151,21 @@ notepad $PROFILE.AllUsersAllHosts
 
 # remove an item
 Remove-Item
+
+#PEs
+
+#PowerShell methods are 
+# Actions objects can do
+
+#T or F? Powershell ISE 7 will be cross platform, feature cloud functionality, and is currently in development
+# False
+
+# What additional condition must also be met for you to be able to change the execution policy?
+# Must be running powershell as administrator 
+
+#Automatic Variables 
+$HOME # user's home directory
+$_ #stores the current object in the pipeline
+$PROFILE # stores the path of the powershell profile
+$PSVERSIONTABLE # stores information about the current powershell verison 
+$PWD # stores the full path of the current working directory 
