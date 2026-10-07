@@ -53,6 +53,12 @@ regex: creating and matching patterns found in text
 
 	Regex PEs:
 
+Q:	How many TLDs (ie .com) are associated with @army email addresses?
+A:	Get-Content .\HR_Employee_list.txt | Select-String -Pattern "(@army)\.[a-z]+" | ForEach-Object {$_.matches.value} | Sort -Unique | Measure-Object
+
+Q: 	How many IPs have exactly two digits in all four of their octets?
+A:	" [\d]{2}\.[\d]{2}\.[\d]{2}\.[\d]{2}$"
+
 Q:	Count the total # of IPs in the 150.0.0.0/8 network anywhere in the file
 A:	(150)\.\d{1,3}\.\d{1,3}\.\d{1,3}
 
@@ -74,7 +80,11 @@ A:	False
 Q:	REGEX is all about creating and matching ____ found in text
 A:	Patterns
 
+Q: 	REGEX to filter for all salaries from 50,000 - 60,000
+A:	Get-Content .\HR_Employee_list.txt | Select-String -Pattern "5\d,\d\d\d"
 
+Q: 	what would match aAAAaAAAaAAAaAAA?
+A: 	([a-z][A-Z]{3}){4}
 
 PowerExchange: PowerShell backdoor used by OilRig
 

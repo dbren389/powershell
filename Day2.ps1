@@ -66,7 +66,8 @@ Get-Content .\HR_Employee_list.txt | Select-String -Pattern "@army.mil" | Measur
 Get-Content .\HR_Employee_list.txt | Select-String -Pattern "-" -AllMatches | ForEach-Object {$_.matches.value} | Measure-Object
 #In the HR_Employees_list.txt file, how many unique salaries are there? (Hints: All salaries are five figures, 1500 is incorrect)
 Get-Content .\HR_Employee_list.txt | Select-String -Pattern "\$\d{2}\,\d{3}"| ForEach-Object {$_.matches.value} | Sort-Object -Unique | Measure-Object
-
+# Count the total # of times "84" appears in the middle of a Social Security Number
+Get-Content .\HR_Employee_list (1).txt | Select-String -Pattern "-84-" | Measure-Object
 
 #PowerShell Conditionals 
 # common comparison operators
@@ -178,11 +179,27 @@ function evenorodd {
 # True 
 
 
+#Extra Regex questions
+
+#How many people work in Europe?
+Get-Content .\HR_Employee_list.txt | Select-String -Pattern "Europe" | Measure-Object
 
 
+#How many different positions are there
+Get-Content .\HR_Employee_list.txt | Select-String -Pattern "Position" | Sort -Unique | Measure-Object
+
+#How many people have the last name Harris
+Get-Content .\HR_Employee_list.txt | Select-String -Pattern "Harris$"
+
+#How many IP addresses start with three digits
+Get-Content .\HR_Employee_list.txt | Select-String -Pattern "\d{3}\.\d{1,3}\.\d{1,3}\.\d{1,3}" | Measure-Object
+
+#How many google addresses are there?
+Get-Content .\HR_Employee_list.txt | Select-String -Pattern "Google" | Measure-Object
 
 
-
+#check regex:
+"blabla" -cmatch "[a-z]{6}"
 
 
 

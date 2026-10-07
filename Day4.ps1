@@ -9,14 +9,24 @@ $mystring2 = "this", "is", "another", "way", "to", "concatenate" -join ","
 Write-Output $mystring2
 
 # replace operator substitures part of a string with something else 
-"batman" -replace "bat", "cat"
+# temporary replacement
+$batman = "batman"
+$batman -replace "bat", "cat"
+
+#permanent replacement
+$batman = "batman" -replace "bat", "cat" -replace "man", "woman"
+
 
 # split operator splits a string into an array of strings based on a delimiter 
-"Break,this,up,by,commas,please" -split ","
+$break = "Break,this,up,by,commas,please" -split ","
 
 #String indexing is used to pull specific characters out of a string variable 
 $stringx = "This is a PowerShell string"
 $stringx[0]
+
+#this doesn't work
+$stringx[0] = "B"
+
 
 # use negative indexing [-n] to get n characters from the end of the string
 $stringx[-1]
@@ -39,9 +49,10 @@ $encodedsecret = [Convert]::ToBase64String($secretbytes)
 write-host $encodedsecret
 
 #execute the command with the -EncodedCommand parameter
+# -EncodedCommand is neccesary to execute a command encoded in base64
 powershell.exe -EncodedCommand $encodedsecret
 
-
+#
 #string manupulation with join
 
 # the below command could signal an alert for notepad commands:
@@ -88,3 +99,21 @@ Write-Output "And I'm gone, without a trace"
 Stop-Transcript
 
 # the transcript should appear in the documents folder 
+
+# obfuscation is the collection of techniques leverages at various levels of an operation to avoid detection 
+
+#powershell commands are run in memory, making it harder to trace since it leaves no physical trace on the disk 
+
+#module logging and script block logging are two types of powershell logging that generate Windows events 
+
+
+#script block logging: processes code segments in chunks and can de-obfuscate
+
+#transcript logging: keeps track of powershell commands in a seperate file
+
+#module logging: logs individual commands literally, does not automatically de-obfuscate them 
+
+#Start-Transcript what cmdlet will start a log file for the current powershell session 
+
+
+

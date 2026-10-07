@@ -59,6 +59,26 @@ else {
 }
 }
 
+function palindrome2 {
+    param ($originalString)
+
+    # Keep letters only
+    $cleanString = $originalString -replace '[^a-zA-Z]', ''
+    # Remove spaces
+    $cleanString = $orignialString -replace '\s', ''
+
+    $charArray = $cleanString.ToCharArray()
+    [array]::Reverse($charArray)
+    $reversedString = -join $charArray
+
+    if ($cleanString -ieq $reversedString) {
+        Write-Output "$originalString is a palindrome!"
+    }
+    else {
+        Write-Output "$originalString is not a palindrome."
+    }
+}
+
 #countdown timer
 
 function timer{

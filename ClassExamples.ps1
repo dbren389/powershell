@@ -230,18 +230,59 @@ function Check-Regex{
 }
 
 
-#Lesson 4
+
+function justsaywhen {
+$when = $False
+while (-not $when){
+    $input = Read-Host "Would you like more cheese on your pasta? just say when."
+    if ($input -eq "when"){
+        $when = $True
+    }
+}
+}
+
+function make-Waves{
+    param($count)
+    $waves = 0
+    $waveform = ""
+    while ($count -gt 0){
+        $waves++
+        if ($waves % 3 -eq 2){
+            $waveform += "_"
+        }
+        elseif($waves % 3 -eq 1){
+           $waveform += "\"
+        }
+        else{
+            $waveform += "/"
+        }
+        Write-Output "$waveform"
+        sleep -Milliseconds 250 #pauses code execution for 250 milliseconds
+        $count--
+    }
+}
+
+#Consider the following array of greetings. If the greeting starts with 'Bad' replace it with 'Good' and diplay it
+# if the greeting starts with 'Good' display it
+#Expected Output:
+# Good day
+# Good morning
+# Good afternoon
+# Good evening
+
+$arr = @("Bad day", "Bad morning", "Good afternoon", "Good evening")
+
+foreach($greeting in $arr){
+    if($greeting -like "*bad*"){
+        $greeting -replace "Bad", "Good"
+    }
+    else{
+        $greeting
+    }
+}
 
 
-
-
-
-
-
-
-
-
-
+# jeopardy 
 
 
 
